@@ -118,3 +118,15 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- with .Values.topologySpreadConstraints }}
+      {{- $constraints := list }}
+      {{- range . }}
+      {{- $c := deepCopy . }}
+      {{- if not $c.labelSelector }}
+      {{- $_ := set $c "labelSelector" (dict "matchLabels" (include "packistry.selectorLabels" $ | fromYaml)) }}
+      {{- end }}
+      {{- $constraints = append $constraints $c }}
+      {{- end }}
+      topologySpreadConstraints:
+        {{- toYaml $constraints | nindent 8 }}
+      {{- end }}

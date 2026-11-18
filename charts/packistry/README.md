@@ -56,6 +56,7 @@ The image runs database migrations on every start (`php artisan migrate --force`
 | `ingress.<name>` | Ingresses keyed by name (e.g. `internal`, `external`). Each enabled entry renders `<fullname>-<name>`. `paths` defaults to `/`. |
 | `httpRoute` | Gateway API alternative to Ingress. Needs `parentRefs`. Routes `/` to Packistry by default. |
 | `supervisordConfig` | Overrides the image's supervisord config so the web server and queue worker log to stdout/stderr (the image logs to files). Set to `""` to keep the image's config. |
+| `topologySpreadConstraints` | Standard pod spread constraints. `labelSelector` defaults to the chart's selector labels when omitted. |
 | `podDisruptionBudget` | `enabled`, plus `minAvailable` or `maxUnavailable` (default `maxUnavailable: 1`). |
 | `hostUsers` | Set to `false` to run the pod in a user namespace (Kubernetes 1.33+, containerd 2.x, kernel 6.3+). |
 | `automountServiceAccountToken` | Pod-level override. Packistry does not use the Kubernetes API. |

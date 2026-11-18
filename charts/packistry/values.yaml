@@ -252,3 +252,13 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Pod topology spread constraints. When `labelSelector` is omitted,
+# it defaults to the chart's selector labels.
+topologySpreadConstraints: []
+  # - maxSkew: 1
+  #   topologyKey: topology.kubernetes.io/zone
+  #   whenUnsatisfiable: ScheduleAnyway
+  # - maxSkew: 1
+  #   topologyKey: kubernetes.io/hostname
+  #   whenUnsatisfiable: ScheduleAnyway
