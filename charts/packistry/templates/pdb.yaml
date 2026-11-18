@@ -1,0 +1,22 @@
+{{- with .Values.podDisruptionBudget }}
+{{- if .enabled }}
+{{- if and (hasKey . "minAvailable") (hasKey . "maxUnavailable") }}
+{{- fail "podDisruptionBudget: set either minAvailable or maxUnavailable, not both" }}
+{{- end }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "packistry.fullname" $ }}
+  labels:
+    {{- include "packistry.labels" $ | nindent 4 }}
+spec:
+  {{- if hasKey . "minAvailable" }}
+  minAvailable: {{ .minAvailable }}
+  {{- else }}
+  maxUnavailable: {{ .maxUnavailable | default 1 }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "packistry.selectorLabels" $ | nindent 6 }}
+{{- end }}
+{{- end }}

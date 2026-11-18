@@ -1,0 +1,17 @@
+apiVersion: v2
+description: Helm chart for Packistry (self-hosted Composer repository)
+type: application
+home: https://packistryphp.com/
+sources:
+  - https://github.com/pixelfederation/packistry
+  - https://github.com/packistry/packistry
+keywords:
+  - packistry
+  - composer
+  - pixelfederation
+maintainers:
+  - name: Jakub Kuska
+    email: jkuska@pixelfederation.com
+name: packistry
+version: 0.1.0
+appVersion: "0.16.3"
