@@ -3,6 +3,27 @@ entries:
   packistry:
   - apiVersion: v2
     appVersion: 0.16.3
+    created: "2026-11-18T14:39:07.452930123Z"
+    description: Helm chart for Packistry (self-hosted Composer repository)
+    digest: 415d53563606e4d3c0e0ffe081b034870924b4e766f6fffab8bf2559e86a360c
+    home: https://packistryphp.com/
+    keywords:
+    - packistry
+    - composer
+    - pixelfederation
+    maintainers:
+    - email: jkuska@pixelfederation.com
+      name: Jakub Kuska
+    name: packistry
+    sources:
+    - https://github.com/pixelfederation/packistry
+    - https://github.com/packistry/packistry
+    type: application
+    urls:
+    - https://github.com/pixelfederation/packistry/releases/download/packistry-0.1.2/packistry-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.16.3
     created: "2026-11-18T14:25:14.348298994Z"
     description: Helm chart for Packistry (self-hosted Composer repository)
     digest: 0576b26ab80308675623c4e1911a47b27643eeb1305dee3d21af0ca219e21650
@@ -22,4 +43,4 @@ entries:
     urls:
     - https://github.com/pixelfederation/packistry/releases/download/packistry-0.1.1/packistry-0.1.1.tgz
     version: 0.1.1
-generated: "2026-11-18T14:25:14.348303839Z"
+generated: "2026-11-18T14:39:07.452943428Z"
